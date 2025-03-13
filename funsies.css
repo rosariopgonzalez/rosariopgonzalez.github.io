@@ -1,0 +1,347 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #E8F9FF;
+  border: 20px solid #C4D9FF;  
+  padding: 15px;            
+  margin: 0;                
+  box-sizing: border-box;       
+  border-radius: 5px;  
+  color: #A294F9;
+}
+
+header {
+  display: flex; 
+  align-items: center;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  justify-content: center;
+  margin: 15px;
+}
+
+p {
+  font-size: 18px;
+  margin: 0; 
+}
+
+h1 {
+  font-size: 40px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+h3 {
+  color: #A294F9;
+}
+
+#fotoRo {
+  margin-left: 20px;
+  border: none;
+  border-radius: 5px;
+  width: 140px;
+  height: 140px;
+}
+
+.menu {
+  display: flex;             
+  justify-content: center;    
+  gap: 25px;                  
+  margin-top: 30px;
+}
+
+.menu-btn {
+  background-color: #C4D9FF;                
+  font-size: 40px;
+  padding: 10px 20px;         
+  border: none;               
+  border-radius: 5px;         
+  text-decoration: none;      
+  cursor: pointer;           
+  transition: background-color 0.3s ease;
+}
+
+.menu-btn:hover {
+  background-color: #C5BAFF;  
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+  gap: 20px; 
+  width: 100%;
+  max-width: 1200px; 
+  margin-top: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 8px; 
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; 
+  transition: transform 0.3s ease; 
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); 
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 8px; 
+}
+
+.gallery-item:hover .overlay {
+  opacity: 1; 
+}
+
+.overlay p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.back-button {
+  background-color: #C4D9FF;  
+  color: #ffffff;                
+  font-size: 40px;
+  padding: 10px 20px;         
+  border: none;               
+  border-radius: 5px;        
+  text-decoration: none;      
+  cursor: pointer;            
+  transition: background-color 0.3s ease;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container {
+margin-top: 30px;
+width: 100%; 
+max-width: 900px; 
+height: 500px; 
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+border: none;
+border-radius: 5px;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+margin-left: auto;
+margin-right: auto;
+position: relative; 
+overflow: hidden;
+}
+
+iframe {
+width: 100%;
+height: 100%;
+border: none;
+border-radius: 5px;
+display: block;
+object-fit: cover;
+}
+
+#player {
+width: 100%;
+height: 100%;
+border: none;
+border-radius: 5px;
+}
+
+.suggestion-box {
+margin: 40px auto;
+padding: 20px;
+max-width: 600px;
+background-color: #C4D9FF;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+
+.suggestion-box h2 {
+font-size: 24px;
+margin-bottom: 20px;
+color: #ffffff;
+}
+
+.form-group {
+margin-bottom: 20px;
+text-align: left;
+}
+
+.form-group label {
+display: block;
+font-size: 16px;
+margin-bottom: 5px;
+color: #ffffff;
+}
+
+.form-group input,
+.form-group textarea {
+width: 100%;
+padding: 10px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 5px;
+box-sizing: border-box;
+background-color: #b8d1ff;
+}
+
+.form-group textarea {
+resize: vertical; 
+}
+
+.quiz-button {
+  position: fixed; 
+  top: 60px;       
+  right: 60px;     
+  background-color: #C5BAFF; 
+  border-radius: 50%;  
+  padding: 10px;      
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+  display: flex;      
+  justify-content: center; 
+  align-items: center;
+  cursor: pointer;   
+  z-index: 9999;      
+}
+
+.quiz-button:hover {
+  background-color: #A294F9; 
+}
+
+.quiz-icon {
+  width: 110px;        
+  height: 110px;
+  object-fit: contain; 
+}
+
+.quiz-button:hover .overlay {
+  opacity: 1; 
+  border-radius: 50%;
+}
+
+.overlay p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+button {
+background-color: #C4D9FF;
+color: #ffffff;
+font-size: 20px;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #A294F9;
+}
+
+#modal {
+display: none; 
+position: fixed; 
+top: 250px;
+width: 50%; 
+height: 40%;
+left: 50%;
+transform: translateX(-50%);
+bottom: 0;
+color: #C4D9FF;
+z-index: 1000;
+justify-content: center;
+align-items: center;
+padding: 10px;
+}
+
+.modal-content {
+background-color: #A294F9;
+color: white;
+margin: auto;
+padding: 30px;
+padding-top: 30px;
+width: 50%; 
+height: 40%;
+transform: translateY(-50%);
+max-width: 500px;
+border-radius: 10px;
+position: relative;
+text-align: center;
+}
+
+.close {
+color: #aaa;
+font-size: 28px;
+font-weight: bold;
+position: absolute;
+top: 10px;
+right: 20px;
+cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+#quiz-container {
+  text-align: center;
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#question-container {
+  margin-bottom: 20px;
+}
+
+.submit-btn {
+  background-color: #C4D9FF;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #A294F9;
+}
+
+#result-container {
+  margin-top: 20px;
+  font-weight: bold;
+}

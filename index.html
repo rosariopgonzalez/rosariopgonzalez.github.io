@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap" rel="stylesheet">  
+  <title>for funsies!</title>
+  <link rel="stylesheet" href="funsies.css">
+</head>
+
+<body>
+  <header>
+    <img src="fotos/ro.JPG" id="fotoRo" alt="foto de ro">
+    <div class="text-container">
+        <h1>holis soy Ro </h1>
+        <p>acá podes ver algunas de las cosas que me gustan!</p>
+    </div>
+  </header>
+
+  <a href="quiz.html" class="quiz-button" target="_blank">
+    <img src="fotos/Pochacco.png" alt="Quiz Icon" class="quiz-icon">
+    <div class="overlay">
+      <p>take the quiz</p>
+    </div>
+  </a>
+
+   <nav class="menu">
+    <a href="musica.html" class="menu-btn">🎧</a>
+    <a href="cafes.html" class="menu-btn">☕</a>
+    <a href="pelis.html" class="menu-btn">🎬</a>
+  </nav>
+
+<section class="suggestion-box">
+  <h2>Deja tu recomendación!</h2>
+  <form id="suggestion-form">
+    <div class="form-group">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+    </div>
+    <div class="form-group">
+      <label for="comment">Recomendación:</label>
+      <textarea id="comment" name="comment" placeholder="puede ser una canción, película o lo que quieras" rows="5" required></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<div id="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>gracias por tu recomendación!</p>
+  </div>       
+</div>
+
+<div class="video-container">
+  <div id="player"></div>
+</div>
+
+<script src="client.js"></script> 
+<script>
+var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        videoId: 'gdZLi9oWNZg', 
+        playerVars: {
+          autoplay: 0, 
+                  mute: 0, 
+                  controls: 1, 
+                  modestbranding: 1, 
+                  rel: 0 
+              },
+              events: {
+                  'onReady': onPlayerReady
+              }
+          });
+      }
+          function onPlayerReady(event) {
+                      document.body.addEventListener('click', function() {
+                          event.target.playVideo(); 
+                          document.getElementById('click-message').style.display = 'none'; 
+                      });
+                  }
+</script>
+
+</body>
+
+</html>
